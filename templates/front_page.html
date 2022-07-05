@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Scrapper</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            overflow-x: hidden;
+        }
+        .nav{
+            background-color: black;
+            display: flex;
+            align-items: center;
+            height: 10vh;
+        }
+        .nav h1{
+            flex-grow: 1;
+            margin-left: 1rem;
+            color: aliceblue;
+        }
+        .nav li a{
+            text-decoration: none;
+        color:white;
+        }
+        .nav li{
+            list-style: none;
+            font-size: 1.2rem;
+            margin: 0 1rem;
+            cursor: pointer;
+      }
+      .main{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         margin-top: 10px;
+         
+      }
+      .all_products{
+          display: flex;
+          padding: 10px;
+          margin: 3px;
+          border: 2px solid black;
+      }
+      .name{
+          width: 25vw;
+      }
+      .price{
+          width: 20vw;
+      }
+      .url{
+          width: 45vw;
+          color: black;
+      }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <h1>PRODUCT SCRAPPER</h1>
+        <li><a href="http://127.0.0.1:5000/">Home</a></li>
+        <li><a href="http://127.0.0.1:5000/add_product">Add Product</a></li>
+      </nav>
+      <div class="main">
+        {% for x in data %}
+        <div class="all_products">
+            <h3 class="name">{{x[1]}}</h3>
+            <h3 class="price">{{x[2]}}</h3>
+            <a class="url" href={{x[3]}}><h4>{{x[3]}}</h4></a>
+        </div>
+            {% endfor %}
+    
+    </div>
+</body>
+</html>

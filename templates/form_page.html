@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Products</title>
+    <style>
+      .main {
+          margin-top: 4%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      input[type="text"] {
+        font-size: 2rem;
+        margin: 1rem;
+        padding: 0.4rem 0.3rem;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+      }
+      body {
+        margin: 0;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        background-color: black;
+        height: 10vh;
+      }
+      nav h1 {
+        color: white;
+        flex-grow: 1;
+        margin-left: 1rem;
+      }
+      nav li {
+        list-style: none;
+        font-size: 1.2rem;
+        margin: 0 1rem;
+        cursor: pointer;
+      }
+
+      nav li a {
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1>PRICE SCRAPPER</h1>
+      <li><a href="{{url_for('home_page')}}">Home</a></li>
+      <li><a href="{{url_for('add_product')}}">Add Product</a></li> 
+    </nav>
+    <form method="post">
+      <div class="main">
+        <input type="text" placeholder="Product URL" name="product_url" />
+        <input type="text" placeholder="Email" name="email" />
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
